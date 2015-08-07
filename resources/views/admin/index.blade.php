@@ -8,9 +8,8 @@
             {{Session::get('message')}}
         </div>
     @endif
-
+    <h1>Prueba gitHub</h1>
     <div class="container text-center">
-        <p>{!! Auth::user()->name !!}</p>
         <h1>ADMINISTRAR</h1>
         <div class="padding-top-50">
             <div class="row">
