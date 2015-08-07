@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: AppStitch
+        psr4_prefix: AppStitch
+        src_path: app
