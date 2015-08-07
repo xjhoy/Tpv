@@ -8,7 +8,6 @@
             {{Session::get('message')}}
         </div>
     @endif
-    <h1>Prueba gitHub</h1>
     <div class="container text-center">
         <h1>ADMINISTRAR</h1>
         <div class="padding-top-50">
