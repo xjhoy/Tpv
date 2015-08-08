@@ -2,9 +2,12 @@
 
 namespace AppStitch\Http\Controllers;
 
+use AppStitch\Prov;
 use Illuminate\Http\Request;
 
 use AppStitch\Http\Requests;
+use AppStitch\Http\Requests\ProvCreateRequest;
+use AppStitch\Http\Requests\ProvUpdateRequest;
 use AppStitch\Http\Controllers\Controller;
 
 class ProveedoresController extends Controller
@@ -16,7 +19,8 @@ class ProveedoresController extends Controller
      */
     public function index()
     {
-        //
+        $provs = Prov::paginate(9);
+        return view('admin.prov.index',compact('provs'));
     }
 
     /**
@@ -26,7 +30,7 @@ class ProveedoresController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.prov.create');
     }
 
     /**
@@ -35,9 +39,21 @@ class ProveedoresController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(ProvCreateRequest $request)
     {
-        //
+        Prov::create([
+            'id'            => $request['id'],
+            'nomContacto'   => $request['nomContacto'],
+            'razonSocial'   => $request['razonSocial'],
+            'telfProv'      => $request['telfProv'],
+            'provProv'      => $request['provProv'],
+            'locProv'       => $request['locProv'],
+            'dirProv'       => $request['dirProv'],
+            'cpProv'        => $request['cpProv'],
+            'emailProv'     => $request['emailProv']
+        ]);
+
+        return redirect('admin/proveedores')->with('message','Producto creado');
     }
 
     /**

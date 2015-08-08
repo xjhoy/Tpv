@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-xs-12 col-md-6 text-center animated fadeInRight">
                     <span class="oi oi-person icon-lg"></span>
-                    <a href="#" class="btn btn-primary btn-lg btn-block">Proveedores</a>
+                    <a href="{!! URL::to('admin/proveedores') !!}" class="btn btn-primary btn-lg btn-block">Proveedores</a>
                 </div>
             </div>
 
